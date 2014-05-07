@@ -53,7 +53,7 @@ if __name__ == "__main__":
         data = json.loads(json_out)
     except ValueError as e:
         data = {}
-        print("Bad json {0!r}".format(json.out))
+        print("Bad json {0!r}".format(json_out))
         sys.exit(0)
 
     total_errors = data['totals']['errors']
