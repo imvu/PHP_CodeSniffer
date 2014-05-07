@@ -5,6 +5,7 @@ import os.path
 import subprocess
 import string
 import json
+import sys
 
 try:
     import argparse
@@ -48,7 +49,12 @@ if __name__ == "__main__":
             print(rest)
             print('----')
 
-    data = json.loads(json_out)
+    try:
+        data = json.loads(json_out)
+    except ValueError as e:
+        data = {}
+        print("Bad json {0!r}".format(json.out))
+        sys.exit(0)
 
     total_errors = data['totals']['errors']
     total_warnings = data['totals']['warnings']
