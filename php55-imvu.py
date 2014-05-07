@@ -48,16 +48,19 @@ if __name__ == "__main__":
             print(rest)
             print('----')
 
-    with open(os.path.expanduser(os.path.join(args.outfile_dest, '{file}.json'.format(file=string.replace(args.file, '/', '_')))), 'w') as f:
-        f.write(json_out)
-    if args.print_json:
-        print(json_out)
-        print('----')
-
     data = json.loads(json_out)
 
     total_errors = data['totals']['errors']
     total_warnings = data['totals']['warnings']
+    
+    if (total_errors + total_warnings) > 0:
+        with open(os.path.expanduser(os.path.join(args.outfile_dest, '{file}.json'.format(file=string.replace(args.file, '/', '_')))), 'w') as f:
+            f.write(json_out)
+        if args.print_json:
+            print(json_out)
+            print('----')
+
+
 
     keys = []
     for x,_ in data['files'].iteritems():
