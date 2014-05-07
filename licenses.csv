@@ -1,0 +1,4 @@
+PACKAGE,LICENSE,COPYRIGHT,SOURCE
+PHP_CodeSniffer, BSD3, Copyright (c) 2012, Squiz Pty Ltd (ABN 77 084 670 600), http://pear.php.net/package/PHP_CodeSniffer/
+PHP_Compatibility,LGPL, , http://www.gnu.org/copyleft/lesser.html
+

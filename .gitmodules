@@ -1,0 +1,3 @@
+[submodule "CodeSniffer/Standards/PHPCompatibility"]
+	path = CodeSniffer/Standards/PHPCompatibility
+	url = https://github.com/imvu/PHPCompatibility.git
